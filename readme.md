@@ -23,6 +23,8 @@ With .NET:
 3. Start the service with `dotnet BaGetter.dll`
 4. Browse `http://localhost:5000/` in your browser
 
+To build BaGetter from source for Windows or Linux, including x64 and ARM64 self-contained builds, see the [PowerShell publishing guide](docs/PowerShell-Publishing.md).
+
 With IIS ([official microsoft documentation](https://learn.microsoft.com/aspnet/core/host-and-deploy/iis)):
 
 1. Install the [hosting bundle](https://dotnet.microsoft.com/permalink/dotnetcore-current-windows-runtime-bundle-installer)
