@@ -15,4 +15,10 @@
     <Project Path="src/BaGetter.Web/BaGetter.Web.csproj" />
     <Project Path="src/BaGetter/BaGetter.csproj" />
   </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/BaGetter.Core.Tests/BaGetter.Core.Tests.csproj" />
+    <Project Path="tests/BaGetter.Protocol.Tests/BaGetter.Protocol.Tests.csproj" />
+    <Project Path="tests/BaGetter.Tests/BaGetter.Tests.csproj" />
+    <Project Path="tests/BaGetter.Web.Tests/BaGetter.Web.Tests.csproj" />
+  </Folder>
 </Solution>
