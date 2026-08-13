@@ -4,7 +4,7 @@ These folders contain the core components of BaGetter:
 
 * `BaGetter` - The app's entry point that glues everything together.
 * `BaGetter.Core` - BaGetter's core logic and services.
-* `BaGetter.Web` - The [NuGet server APIs](https://docs.microsoft.com/en-us/nuget/api/overview) and web UI.
+* `BaGetter.Web` - The [NuGet server APIs](https://docs.microsoft.com/en-us/nuget/api/overview).
 * `BaGetter.Protocol` - Libraries to interact with [NuGet servers' APIs](https://docs.microsoft.com/en-us/nuget/api/overview).
 
 These folders contain database-specific components of BaGetter:

@@ -72,9 +72,9 @@ You should change this to a secret value to secure your server. See [Configure B
 
 :::
 
-## Browse packages
+## Package source
 
-You can browse packages by opening the URL [`http://localhost:5000/`](http://localhost:5000/) in your browser.
+This API-only build does not include a package-browsing web interface.
 
 ## Restore packages
 

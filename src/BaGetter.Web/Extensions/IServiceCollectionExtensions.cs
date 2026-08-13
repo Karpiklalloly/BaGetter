@@ -4,7 +4,6 @@ using BaGetter.Authentication;
 using BaGetter.Core;
 using BaGetter.Web;
 using BaGetter.Web.Authentication;
-using BaGetter.Web.Helper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -25,12 +24,8 @@ public static class IServiceCollectionExtensions
                 options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
             });
 
-        services.AddRazorPages();
-
         services.AddHttpContextAccessor();
         services.AddTransient<IUrlGenerator, BaGetterUrlGenerator>();
-
-        services.AddSingleton(ApplicationVersionHelper.GetVersion());
 
         var app = services.AddBaGetterApplication(configureAction);
 

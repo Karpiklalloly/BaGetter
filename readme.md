@@ -3,10 +3,6 @@
 BaGetter is a lightweight [NuGet] and [symbol] server, written in C#.
 It's forked from [BaGet] for progressive and community driven development.
 
-<p align="center">
-  <img width="100%" src="https://user-images.githubusercontent.com/737941/50140219-d8409700-0258-11e9-94c9-dad24d2b48bb.png">
-</p>
-
 ![Build status] [![Docker image version]][Docker link] [![Discord][Discord image]][Discord link]
 
 ## 🚀 Getting Started
@@ -14,14 +10,16 @@ It's forked from [BaGet] for progressive and community driven development.
 With Docker:
 
 1. `docker run -p 5000:8080 -v ./bagetter-data:/data bagetter/bagetter:latest`
-2. Browse `http://localhost:5000/` in your browser
+2. Use `http://localhost:5000/v3/index.json` as the NuGet package source
 
 With .NET:
 
 1. Install the [.NET SDK]
 2. Download and extract [BaGetter's latest release]
 3. Start the service with `dotnet BaGetter.dll`
-4. Browse `http://localhost:5000/` in your browser
+4. Use `http://localhost:5000/v3/index.json` as the NuGet package source
+
+This fork is API-only and does not include the Razor web interface.
 
 To build BaGetter from source for Windows or Linux, including x64 and ARM64 self-contained builds, see the [PowerShell publishing guide](docs/PowerShell-Publishing.md).
 
