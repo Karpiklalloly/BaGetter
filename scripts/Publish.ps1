@@ -44,9 +44,11 @@ if (-not $outputPath.StartsWith($publishRootPrefix, [System.StringComparison]::O
     throw "Refusing to use an output directory outside '$publishRoot': $outputPath"
 }
 
-if ($Clean -and (Test-Path -LiteralPath $outputPath)) {
-    Write-Host "Cleaning: $outputPath"
-    Remove-Item -LiteralPath $outputPath -Recurse -Force
+if ($Clean) {
+    if (Test-Path -LiteralPath $outputPath) {
+        Write-Host "Cleaning publish output: $outputPath"
+        Remove-Item -LiteralPath $outputPath -Recurse -Force
+    }
 }
 
 Write-Host "Publishing BaGetter"
@@ -67,6 +69,24 @@ $restoreArguments = @(
 & $dotnetCommand.Source @restoreArguments
 if ($LASTEXITCODE -ne 0) {
     throw "dotnet restore failed with exit code $LASTEXITCODE."
+}
+
+if ($Clean) {
+    Write-Host "Cleaning Release build outputs for $runtimeIdentifier"
+    $cleanArguments = @(
+        'clean',
+        $projectPath,
+        '--configuration', 'Release',
+        '--runtime', $runtimeIdentifier,
+        '--disable-build-servers',
+        '-p:BuildInParallel=false',
+        '-m:1'
+    )
+
+    & $dotnetCommand.Source @cleanArguments
+    if ($LASTEXITCODE -ne 0) {
+        throw "dotnet clean failed with exit code $LASTEXITCODE."
+    }
 }
 
 $publishArguments = @(

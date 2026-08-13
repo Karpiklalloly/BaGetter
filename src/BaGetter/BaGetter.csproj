@@ -7,17 +7,12 @@
 
   <ItemGroup>
     <PackageReference Include="McMaster.Extensions.CommandLineUtils" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\BaGetter.Core\BaGetter.Core.csproj" />
     <ProjectReference Include="..\BaGetter.Database.Sqlite\BaGetter.Database.Sqlite.csproj" />
     <ProjectReference Include="..\BaGetter.Web\BaGetter.Web.csproj" />
-    <ProjectReference Include="..\BaGetter.Protocol\BaGetter.Protocol.csproj" />
   </ItemGroup>
 
 </Project>
