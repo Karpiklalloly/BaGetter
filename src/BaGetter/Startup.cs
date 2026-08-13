@@ -1,13 +1,7 @@
 using System;
-using BaGetter.Authentication;
 using BaGetter.Core;
 using BaGetter.Core.Extensions;
-using BaGetter.Tencent;
 using BaGetter.Web;
-using BaGetter.Web.Authentication;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.OAuth;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation;
@@ -59,19 +53,10 @@ public class Startup
         app.AddNugetBasicHttpAuthorization();
 
         // Add database providers.
-        app.AddAzureTableDatabase();
-        app.AddMySqlDatabase();
-        app.AddPostgreSqlDatabase();
         app.AddSqliteDatabase();
-        app.AddSqlServerDatabase();
 
         // Add storage providers.
         app.AddFileStorage();
-        app.AddAliyunOssStorage();
-        app.AddAwsS3Storage();
-        app.AddAzureBlobStorage();
-        app.AddGoogleCloudStorage();
-        app.AddTencentOssStorage();
 
         // Add search providers.
         //app.AddAzureSearch();
